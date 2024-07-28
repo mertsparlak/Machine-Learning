@@ -107,7 +107,7 @@ rf_reg.fit(X,Y.ravel())
 print(rf_reg.predict([[6.5]]) )#6.5 eğitim seviyesi için maaş tahmini
 print(rf_reg.predict([[6.6]]))
 
-
+"""
 plt.scatter(X,Y,color="red")
 
 plt.plot(X,rf_reg.predict(X), color="blue")
@@ -118,7 +118,11 @@ plt.plot(X,rf_reg.predict(K), color="yellow")
  ##rand forestta ise Z ve K ile farklı tahminler yapılabildi çünkü frameleri böldük 
  ## ve farklı sonuçlar verebildiler algoritmamız da bir karar verdi buna göre.
  ## rand forest çoğu zaman decision tree ye göre çok daha etkilidir.
+"""
 
+from sklearn.metrics import r2_score
+print("Random forest r^2 degeri:")
+print(r2_score(Y,rf_reg.predict(X)))
 
 
 
