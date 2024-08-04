@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-veriler=pd.read_csv(r"C:\Users\merts\.spyder-py3\makine-ogrenmesi\Classification_algorithms\Logicistic_regression\veriler.csv")
+veriler=pd.read_csv(r"C:\Users\merts\.spyder-py3\Makine-Ogrenmesi\Lessons\Classification_algorithms\SVM\veriler.csv")
 print(veriler)
 
 x=veriler.iloc[:,1:4].values ## bağımsız değişkenler
@@ -46,4 +46,14 @@ knn.fit(X_train, y_train) # X_train den y_train öğretiyor
 y_pred=knn.predict(X_test)
 
 cm=confusion_matrix(y_test, y_pred)
+
+from sklearn.svm import SVC
+svc=SVC(kernel="poly")
+svc.fit(X_train,y_train)
+
+y_pred=svc.predict(X_test)
+
+cm=confusion_matrix(y_test, y_pred)
+print("SVC")
+print(cm)
 
