@@ -77,7 +77,7 @@ from sklearn.ensemble import RandomForestClassifier
 rfc=RandomForestClassifier(n_estimators=10,criterion="entropy")
 rfc.fit(X_train, y_train)
 y_pred=rfc.predict(X_test)
-
+ 
 rfc=confusion_matrix(y_test, y_pred)
 print("RFC")
 print(rfc)
